@@ -945,7 +945,7 @@ a {
     margin: 80px 0;
 }
 
-.maintenance-section h3 {
+.maintenance-section>h3 {
     font-size: 44px;
     color: var(--primary);
     margin-bottom: 24px;
@@ -970,13 +970,59 @@ a {
     font-weight: 500;
 }
 
+/* ---- Layout de las dos columnas ---- */
+/* fr proporcional al contenido: Mantenimiento (3 tarjetas) vs
+   Pruebas (4 tarjetas), así cada columna respira según su carga */
 .maintenance-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: 3fr 4fr;
+    gap: 32px;
+    align-items: start;
     margin-bottom: 48px;
 }
 
+.maintenance-cards,
+.maintenance-types {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ---- Títulos de columna (antes sin estilo propio) ---- */
+.maintenance-titles,
+.trial-types {
+    font-size: 26px;
+    color: var(--primary);
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+    padding-bottom: 14px;
+    position: relative;
+}
+
+.maintenance-titles::after,
+.trial-types::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.maintenance-titles::after {
+    background: var(--accent);
+}
+
+.trial-types::after {
+    background: var(--orange);
+}
+
+/* ---- Tarjetas ---- */
 .maintenance-card {
     background: var(--bg-primary);
     padding: 28px;
@@ -986,44 +1032,51 @@ a {
     border-left: 4px solid var(--accent);
     transition: var(--transition);
     animation: fadeInUp 0.8s ease-out backwards;
+    height: 100%;
 }
 
-.maintenance-card:nth-child(even) {
+/* Las tarjetas de "Pruebas" usan acento naranja para diferenciarse
+   visualmente de las de "Mantenimiento" (acento verde) */
+.maintenance-types .maintenance-card {
     border-left-color: var(--orange);
 }
 
-.maintenance-card:nth-child(1) {
+.maintenance-cards .maintenance-card:nth-child(1) {
     animation-delay: 0.1s;
 }
 
-.maintenance-card:nth-child(2) {
+.maintenance-cards .maintenance-card:nth-child(2) {
     animation-delay: 0.2s;
 }
 
-.maintenance-card:nth-child(3) {
+.maintenance-cards .maintenance-card:nth-child(3) {
     animation-delay: 0.3s;
 }
 
-.maintenance-card:nth-child(4) {
-    animation-delay: 0.4s;
+.maintenance-types .maintenance-card:nth-child(1) {
+    animation-delay: 0.15s;
 }
 
-.maintenance-card:nth-child(5) {
-    animation-delay: 0.5s;
+.maintenance-types .maintenance-card:nth-child(2) {
+    animation-delay: 0.25s;
 }
 
-.maintenance-card:nth-child(6) {
-    animation-delay: 0.6s;
+.maintenance-types .maintenance-card:nth-child(3) {
+    animation-delay: 0.35s;
 }
 
-.maintenance-card:nth-child(7) {
-    animation-delay: 0.7s;
+.maintenance-types .maintenance-card:nth-child(4) {
+    animation-delay: 0.45s;
 }
 
 .maintenance-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
     border-color: var(--accent);
+}
+
+.maintenance-types .maintenance-card:hover {
+    border-color: var(--orange);
 }
 
 .maintenance-card h4 {
@@ -1041,6 +1094,7 @@ a {
     line-height: 1.7;
 }
 
+/* ---- Footer de la sección ---- */
 .maintenance-footer {
     background: linear-gradient(135deg, #042a04 0%, #0a3d0a 100%);
     color: var(--text-inverse);
@@ -1532,6 +1586,27 @@ a {
         flex-direction: column;
         gap: 10px;
         text-align: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .maintenance-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+ 
+@media (max-width: 600px) {
+    .maintenance-section>h3 {
+        font-size: 32px;
+    }
+ 
+    .maintenance-intro {
+        padding: 24px;
+    }
+ 
+    .maintenance-card {
+        padding: 22px;
     }
 }
 
