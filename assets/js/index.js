@@ -252,6 +252,7 @@ function init() {
     initQuoteForm();
     initCarousel();
     initHeaderShadow();
+    initNormateca();
 
     console.log('%c✓ Todo inicializado', 'color: #3b82f6; font-size: 12px;');
 }

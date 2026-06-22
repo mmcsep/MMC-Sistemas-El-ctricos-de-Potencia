@@ -516,17 +516,11 @@
                 <p class="section-description">Gestión completa de trámites y supervisión de obras ante la Comisión
                     Federal de Electricidad</p>
 
-
-                <a href="assets/docs/normateca.pdf" download="Normateca-CFE.pdf" class="btn btn-primary"
+                <!--Inicio de modal para-->
+                <button id="abrir-modal-normateca" class="btn btn-primary"
                     style="margin-top: 24px; display: inline-flex;">
-                    Descargar Normateca
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        aria-hidden="true">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                </a>
+                    Ver Normateca
+                </button>
             </div>
 
             <div class="cfe-intro">
@@ -759,8 +753,17 @@
         </div>
     </footer>
 
+    <!--Sección del modal para NORMATECA-->
+    <div id="modal-normateca" class="normateca-modal">
+        <div class="normateca-content">
+            <span id="cerrar-modal-normateca" class="close">&times;</span>
+            <h2>Normateca</h2>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="assets/js/index.js"></script>
+    <script src="assets/js/normateca.js"></script>
 
 </body>
 
