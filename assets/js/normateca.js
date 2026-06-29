@@ -16,14 +16,8 @@
 const NORMATECA_DOCS = [
     { nombre: "DCPROTER.pdf", tamano: "370 KB" },
     { nombre: "DCPROASO.pdf", tamano: "487 KB" },
-    { nombre: "DCMMT600.pdf", tamano: "438 KB" },
-    { nombre: "DCMMT500.pdf", tamano: "629 KB" },
     { nombre: "DCSEEEGA.pdf", tamano: "183 KB" },
     { nombre: "DCCSSUBT.pdf", tamano: "15.6 MB" },
-    { nombre: "DCMMT400.pdf", tamano: "960 KB" },
-    { nombre: "DCMMT100.pdf", tamano: "813 KB" },
-    { nombre: "DCMBT300.pdf", tamano: "1.5 MB" },
-    { nombre: "DCMBT200.pdf", tamano: "1.2 MB" },
     { nombre: "DCCIAMBT.pdf", tamano: "24.3 MB" },
 ];
 
